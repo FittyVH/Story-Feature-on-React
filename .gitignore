@@ -1,0 +1,24 @@
+# Dependencies (The heavy folders)
+/node_modules
+/.pnp
+.pnp.js
+
+# Testing / Production builds
+/dist
+/build
+/coverage
+
+# Local Environment Secrets (Crucial for security!)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# System files / Editor configurations
+.DS_Store
+.vscode/
+.idea/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
