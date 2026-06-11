@@ -21,7 +21,7 @@ const StoryBar = () => {
       reader.onloadend = () => {
         const base64Image = reader.result;
 
-        // Add a brand new story object into our array with its unique data
+        // add object to the array
         setStories((prevStories) => [
           ...prevStories,
           { id: Date.now(), image: base64Image },
@@ -29,7 +29,7 @@ const StoryBar = () => {
       };
     }
 
-    // Clear value so the user can upload the exact same image twice in a row if they want
+    // cear value to upload the exact same image twice in a row if they want
     e.target.value = "";
   };
 

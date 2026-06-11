@@ -1,15 +1,26 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useState } from "react";
+import styled from "styled-components";
+import StoryPreview from "./StoryPreview";
 
-const Story = ({coverImage}) => {
-  return (
-    <StoryButton>
-        <img src={coverImage || "/Icons/ghost-svgrepo-com.svg"} alt="" />
-    </StoryButton>
+const Story = ({ coverImage }) => {
+  const [isPreviewOpen, setPreviewOpen] = useState(false);
+
+  const onClose = () =>(
+    setPreviewOpen(false)
   )
-}
 
-export default Story
+  return (
+    <>
+      <StoryButton onClick={() => setPreviewOpen(true)}>
+        <img src={coverImage || "/Icons/ghost-svgrepo-com.svg"} alt="" />
+      </StoryButton>
+
+      <StoryPreview isOpen={isPreviewOpen} image={coverImage} onClose={onClose}/>
+    </>
+  );
+};
+
+export default Story;
 
 const StoryButton = styled.button`
   background: none;
@@ -33,4 +44,4 @@ const StoryButton = styled.button`
     border: 5px solid #ff0000;
     padding: 2px;
   }
-`
+`;
